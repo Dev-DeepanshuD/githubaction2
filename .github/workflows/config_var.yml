@@ -20,5 +20,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo "this is my ${{ vars.configvar1 }}!"
+        run: |
+          echo "this is my ${{ vars.configvar1 }}!"
+          echo ${{  github.workflow  }}
+          echo ${{  github.triggering_actor  }}
+          echo ${{  github.repository  }}
 
